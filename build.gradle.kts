@@ -21,7 +21,8 @@ dependencies {
 	providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
-	implementation("mysql:mysql-connector-java:5.1.13")
+	implementation("mysql:mysql-connector-java:8.0.31")
+	implementation("org.springframework.boot:spring-boot-starter-jdbc:2.6.8")
 
 }
 

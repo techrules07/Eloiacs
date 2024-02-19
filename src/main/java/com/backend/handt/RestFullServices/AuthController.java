@@ -1,17 +1,22 @@
 package com.backend.handt.RestFullServices;
 
 
+import com.backend.handt.DBHandler.UserAccountHandler;
 import com.backend.handt.Responses.LoginResponse;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/v2")
 public class AuthController {
 
-    @RequestMapping("/v2/account/login")
+    @Autowired
+    UserAccountHandler userHanlder;
+
+    @RequestMapping(value = "/account/login", method = RequestMethod.GET)
     @ResponseBody
     public LoginResponse login() {
+        userHanlder.getAllData();
         return new LoginResponse();
     }
 }
