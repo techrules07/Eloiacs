@@ -16,12 +16,13 @@ public class UserAccountHandler {
     JdbcTemplate jdbcTemplate;
 
     public int insert() {
+        //
         return 1;
     }
 
 
     public void getAllData() {
-        String query = "SELECT * FROM account";
+        String query = "SELECT * FROM users";
         jdbcTemplate.query(query, new ResultSetExtractor<Integer>() {
             @Override
             public Integer extractData(ResultSet rs) throws SQLException, DataAccessException {

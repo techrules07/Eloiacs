@@ -6,11 +6,11 @@ plugins {
 }
 
 group = "com.backend.handt"
-version = "0.0.1-SNAPSHOT"
 
 java {
 	sourceCompatibility = JavaVersion.VERSION_17
 }
+
 
 repositories {
 	mavenCentral()
@@ -28,6 +28,10 @@ dependencies {
 
 tasks.withType<Test> {
 	useJUnitPlatform()
+}
+
+tasks.bootWar {
+	archiveBaseName.set("handt")
 }
 
 tasks.bootBuildImage {
